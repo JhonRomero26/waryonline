@@ -2,14 +2,20 @@
   "name": "waryapi",
   "version": "1.0.50",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "test": "NODE_ENV=test bun test --watch",
+    "dev": "NODE_ENV=development bun run --watch src/index.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "dotenv": "16.3.1",
+    "elysia": "0.7.24",
+    "mongoose": "8.0.0",
+    "valibot": "0.20.1"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@types/supertest": "2.0.16",
+    "bun-types": "latest",
+    "supertest": "6.3.3",
+    "vitest": "0.34.6"
   },
   "module": "src/index.js"
 }

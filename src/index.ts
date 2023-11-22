@@ -1,7 +1,8 @@
-import { Elysia } from "elysia";
+import App from "./app";
+import dotenv from "dotenv";
+import { connectMongo } from "@/database/mongo";
 
-const app = new Elysia().get("/", () => "Hello Elysia").listen(3000);
+dotenv.config();
+connectMongo();
 
-console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
-);
+export const app = new App(8000);
